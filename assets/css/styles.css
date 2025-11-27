@@ -134,7 +134,7 @@ a {
 /* Nav links – hidden by default, shown when nav-open */
 .nav-links {
   position: absolute;
-  top: calc(100% - 1px);  /* pulls the menu up to meet the gold bar */
+  top: calc(100% + 10px);  /* pulls the menu up to meet the gold bar */
   right: 0;
   left: auto;
   display: none;
