@@ -495,32 +495,90 @@ ww
   }
 }
 
-/* --- Mobile nav clean-up & spacing override --- */
-@media (max-width: 768px) {
-  /* Slightly tighter header padding on mobile */
-  .nav-inner {
-    padding: 0.75rem 1.5rem;
-  }
+/* === FINAL NAV OVERRIDES (DESKTOP + MOBILE) ===================== */
 
-  /* Keep the burger in a nice spot */
-  .nav-actions {
-    top: 0.75rem;
-    right: 1.5rem;
-  }
+.nav-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 3rem;    /* gives breathing room left/right */
+}
 
-  /* Make sure the toggle is visible on mobile */
-  .nav-toggle {
-    display: inline-flex;
-  }
+/* Hamburger toggle */
+.nav-toggle {
+  display: inline-flex;
+  flex-direction: column;   /* default: stacked bars */
+  justify-content: center;
+  align-items: center;
+  padding: 0.35rem;
+  margin-left: auto;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  cursor: pointer;
+}
 
-  /* Mobile dropdown panel */
-  .nav-links {
-    position: absolute;
-    top: calc(100% + 12px);   /* 👈 small gap under the ||| bars */
-    left: 1.5rem;             /* inset from edges so it doesn’t touch screen */
-    right: 1.5rem;
-    min-width: 0;
-    border-radius: 0 0 12px 12px;
-    padding: 0.75rem 1.25rem 1rem;
-  }
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  margin: 4px 0;
+  background: var(--gold-light);
+  transition: all 0.2s ease;
+}
+
+/* OPEN STATE – three vertical bars: | | | */
+.nav.nav-open .nav-toggle {
+  flex-direction: row;
+}
+
+.nav.nav-open .nav-toggle span {
+  width: 2px;          /* tall, thin bars */
+  height: 22px;
+  margin: 0 3px;
+  transform: none;
+  opacity: 1;
+}
+
+/* Dropdown menu panel */
+.nav-links {
+  position: absolute;
+  top: calc(100% + 8px);                 /* small gap below bars */
+  right: 3rem;
+  left: auto;
+  display: none;
+  flex-direction: column;
+  min-width: 220px;
+  background: rgba(5, 6, 5, 0.98);
+  border: 1px solid rgba(194, 165, 104, 0.25);
+  border-radius: 0 0 12px 12px;
+  padding: 0.75rem 1.25rem 1rem;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+  z-index: 30;
+}
+
+.nav.nav-open .nav-links {
+  display: flex;
+}
+
+.nav-links a {
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(194, 165, 104, 0.12);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.nav-links a:last-child {
+  border-bottom: none;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--gold-light);
+  border-bottom-color: rgba(194, 165, 104, 0.4);
 }
