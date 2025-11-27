@@ -95,34 +95,40 @@ a {
 
 /* Hamburger toggle – always visible */
 /* CLOSED — normal horizontal burger */
+/* Hamburger toggle – always visible */
 .nav-toggle {
   display: flex;
-  flex-direction: column;
+  flex-direction: column;        /* default: stacked bars */
   justify-content: center;
   align-items: center;
-  gap: 3px; /* exact spacing */
+  padding: 0;                    /* remove extra box space */
+  margin: 0;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  cursor: pointer;
 }
 
 .nav-toggle span {
-  width: 22px;
-  height: 2px;
-  background: #d1b77c;
   display: block;
-  transition: transform 0.3s ease;
+  width: 24px;          /* a touch longer so it feels substantial */
+  height: 2px;
+  margin: 3px 0;        /* vertical spacing between bars */
+  background: var(--gold-light);
+  transition: all 0.25s ease;
 }
 
 /* OPEN — rotated vertical burger */
+/* Open: three vertical bars side-by-side: | | | */
 .nav.nav-open .nav-toggle {
-  flex-direction: row;
-  gap: 3px;
-  transform: translateX(-8px);
+  flex-direction: row;  /* side-by-side instead of stacked */
 }
 
 .nav.nav-open .nav-toggle span {
-  width: 2px;        /* thin vertical bar */
-  height: 22px;      /* tall */
-  transform: none;
-  margin: 0 1px;     /* keeps spacing clean */
+  width: 2px;           /* now tall, thin bars */
+  height: 24px;
+  margin: 0 3px;        /* horizontal spacing between bars */
 }
 
 /* Nav links – hidden by default, shown when nav-open */
