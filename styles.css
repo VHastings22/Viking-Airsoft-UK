@@ -90,6 +90,7 @@ a {
   right: 2.5rem; /* Align visually with dropdown */
   display: flex;
   align-items: center;
+  margin-right: 10px;
 }
 
 /* Hamburger toggle – always visible */
@@ -417,7 +418,7 @@ a {
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .nav-inner {
-    padding: 1rem 2.8rem;
+    padding: 1rem 3rem;
   }
 
     .nav-links {
