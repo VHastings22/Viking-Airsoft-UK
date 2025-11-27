@@ -94,37 +94,35 @@ a {
 }
 
 /* Hamburger toggle – always visible */
+/* CLOSED — normal horizontal burger */
 .nav-toggle {
-  display: inline-flex;
-  flex-direction: column;  /* default = vertical stack */
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: transparent;
-  border: none;
-  padding: 0.6rem 0.5rem;
-  cursor: pointer;
-  transition: transform 0.25s ease;
+  gap: 3px; /* exact spacing */
 }
 
 .nav-toggle span {
-  display: block;
   width: 22px;
   height: 2px;
-  margin: 3px 0;
-  background: var(--gold-light);
-  transform-origin: center;
-  transition: transform 0.25s ease;
+  background: #d1b77c;
+  display: block;
+  transition: transform 0.3s ease;
 }
 
-/* When menu is open, rotate all bars to make a vertical "burger" */
-/* OPEN MENU → show three vertical bars side-by-side */
+/* OPEN — rotated vertical burger */
 .nav.nav-open .nav-toggle {
-  flex-direction: row;             /* switch from column → row */
+  flex-direction: row;
+  gap: 3px;
+  transform: translateX(-8px);
 }
 
 .nav.nav-open .nav-toggle span {
-  transform: rotate(90deg);        /* make them vertical */
-  margin: 0 1px;                   /* spacing between the bars */
+  width: 2px;        /* thin vertical bar */
+  height: 22px;      /* tall */
+  transform: none;
+  margin: 0 1px;     /* keeps spacing clean */
 }
 
 /* Nav links – hidden by default, shown when nav-open */
