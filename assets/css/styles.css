@@ -60,10 +60,11 @@ a {
 }
 
 .nav-inner {
+  position: relative;        /* NEW: make this the anchor box */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 3rem; /* MORE space for the X */
+  padding: 1rem 3rem;
 }
 
 .nav-logo {
@@ -87,7 +88,7 @@ a {
 .nav-actions {
   position: absolute;
   top: 1rem;
-  right: 10rem; /* Align visually with dropdown */
+  right: 3rem;              /* line up with the padding on .nav-inner */
   display: flex;
   align-items: center;
 }
