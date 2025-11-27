@@ -101,7 +101,7 @@ a {
   align-items: center;
   background: transparent;
   border: none;
-  padding: 0.6rem 0.5rem;
+  padding: 0.75rem 0.6rem;
   cursor: pointer;
 }
 
@@ -111,13 +111,14 @@ a {
   height: 2px;
   margin: 3px 0;
   background: var(--gold-light);
+  transform-origin: center;   /* NEW: rotate around the middle */
   transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.2s ease;
 }
 
 /* Slightly smaller transforms so it doesn’t hit the edges */
 
 .nav.nav-open .nav-toggle span:nth-child(1) {
-  transform: translateY(6px) rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .nav.nav-open .nav-toggle span:nth-child(2) {
@@ -125,7 +126,7 @@ a {
 }
 
 .nav.nav-open .nav-toggle span:nth-child(3) {
-  transform: translateY(-6px) rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
 /* Nav links – hidden by default, shown when nav-open */
