@@ -124,7 +124,7 @@ a {
 
 .nav.nav-open .nav-toggle span {
   transform: rotate(90deg);        /* make them vertical */
-  margin: 0 3px;                   /* spacing between the bars */
+  margin: 0 1px;                   /* spacing between the bars */
 }
 
 /* Nav links – hidden by default, shown when nav-open */
