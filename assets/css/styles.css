@@ -130,7 +130,7 @@ a {
   height: 24px;
   margin: 0 3px;        /* horizontal spacing between bars */
 }
-
+ww
 /* Nav links – hidden by default, shown when nav-open */
 .nav-links {
   position: absolute;
@@ -492,5 +492,35 @@ a {
   .footer-inner {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+/* --- Mobile nav clean-up & spacing override --- */
+@media (max-width: 768px) {
+  /* Slightly tighter header padding on mobile */
+  .nav-inner {
+    padding: 0.75rem 1.5rem;
+  }
+
+  /* Keep the burger in a nice spot */
+  .nav-actions {
+    top: 0.75rem;
+    right: 1.5rem;
+  }
+
+  /* Make sure the toggle is visible on mobile */
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  /* Mobile dropdown panel */
+  .nav-links {
+    position: absolute;
+    top: calc(100% + 12px);   /* 👈 small gap under the ||| bars */
+    left: 1.5rem;             /* inset from edges so it doesn’t touch screen */
+    right: 1.5rem;
+    min-width: 0;
+    border-radius: 0 0 12px 12px;
+    padding: 0.75rem 1.25rem 1rem;
   }
 }
